@@ -17,7 +17,7 @@ input[type=text], input[type=password], textarea {
 #main {
     background-color: #eee;
     padding: 4px;
-    margin: 0; 
+    margin: 0;
 }
 
 #footer {
@@ -43,9 +43,13 @@ input[type=text], input[type=password], textarea {
         list-style-type: none;
     }
 
-    .menu li.active {
-        font-weight: bold;
-    }
+        .menu li.active {
+            font-weight: bold;
+        }
+
+        .menu li a {
+            color: #eee;
+        }
 
 #sidebar {
     background: #2a2c36;
@@ -53,11 +57,29 @@ input[type=text], input[type=password], textarea {
     position: fixed;
     height: 100%;
     width: 250px;
+    -moz-transition: left ease .25s;
+    -o-transition: left ease .25s;
+    -webkit-transition: left ease .25s;
+    transition: left ease .25s;
     overflow: hidden;
     left: 0;
     margin: 0;
 }
 
+    #sidebar.hide-sidebar {
+        left: -250px;
+        /*transition: left ease .25s;*/
+    }
+
 #wrapper {
     margin: 0 0 0 250px;
+    -moz-transition: margin-left ease .25s;
+    -o-transition: margin-left ease .25s;
+    -webkit-transition: margin-left ease .25s;
+    transition: margin-left ease .25s;
 }
+
+    #wrapper.hide-sidebar {
+        margin-left: 0;
+        /*transition: margin-left ease .25s;*/
+    }
